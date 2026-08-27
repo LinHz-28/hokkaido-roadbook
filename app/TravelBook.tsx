@@ -64,6 +64,9 @@ type SimpleChapter = {
 
 type Chapter = SimpleChapter | DayChapter;
 
+const publicAsset = (path: string) =>
+  `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
+
 const days: DayChapter[] = [
   {
     kind: "day",
@@ -77,7 +80,7 @@ const days: DayChapter[] = [
     route: "新千歲機場 → 富良野",
     mood: "越過城市與群山，旅程的第一頁在富良野暮色中展開。",
     drive: "主線車程約 2 小時",
-    image: "/images/farm-tomita.jpg",
+    image: publicAsset("/images/farm-tomita.jpg"),
     imageAlt: "富田農場盛開的紫色薰衣草田",
     stops: [
       { time: "11:55", title: "抵達新千歲機場", detail: "完成入境手續後前往租車櫃檯。" },
@@ -101,10 +104,10 @@ const days: DayChapter[] = [
     route: "富良野 → 美瑛 → 旭川",
     mood: "花色漸遠、池水轉藍，每一段短途車程都像翻開新的風景。",
     drive: "各段約 15 至 30 分鐘",
-    image: "/images/blue-pond.jpg",
+    image: publicAsset("/images/blue-pond.jpg"),
     imageAlt: "美瑛白金青池的湛藍湖水與枯木倒影",
     imagePosition: "center 54%",
-    secondaryImage: "/images/shikisai-hill.jpg",
+    secondaryImage: publicAsset("/images/shikisai-hill.jpg"),
     secondaryAlt: "四季彩之丘層層延伸的繽紛花田",
     stops: [
       { time: "早晨", title: "富田農場", detail: "欣賞夏末花田，順手吃一支哈密瓜霜淇淋。" },
@@ -128,7 +131,7 @@ const days: DayChapter[] = [
     route: "旭川 → 國道 40 號 → 稚內",
     mood: "道路愈來愈筆直，文明的喧囂也在後視鏡裡逐漸消失。",
     drive: "午後主線約 3.5 至 4 小時",
-    image: "/images/asahiyama-penguin.jpg",
+    image: publicAsset("/images/asahiyama-penguin.jpg"),
     imageAlt: "旭山動物園內列隊散步的企鵝",
     imagePosition: "center 46%",
     stops: [
@@ -153,10 +156,10 @@ const days: DayChapter[] = [
     route: "稚內 → 宗谷岬 → 宗谷丘陵 → 野寒布岬",
     mood: "白色道路伸向海天盡頭，世界在此只剩風、草原與寂靜。",
     drive: "最北端一日環線",
-    image: "/images/white-shell-road.jpg",
+    image: publicAsset("/images/white-shell-road.jpg"),
     imageAlt: "宗谷丘陵蜿蜒向海的白色扇貝殼道路",
     imagePosition: "center 50%",
-    secondaryImage: "/images/soya-cape.jpg",
+    secondaryImage: publicAsset("/images/soya-cape.jpg"),
     secondaryAlt: "宗谷岬日本最北端之地碑與北方海岸",
     stops: [
       { time: "早晨", title: "宗谷岬", detail: "朝聖日本最北端地碑，直面鄂霍次克海。" },
@@ -180,7 +183,7 @@ const days: DayChapter[] = [
     route: "稚內市區慢遊",
     mood: "不追趕景點的一天，才真正聽得見北境城市緩慢的呼吸。",
     drive: "市區短程移動",
-    image: "/images/wakkanai-dome.jpg",
+    image: publicAsset("/images/wakkanai-dome.jpg"),
     imageAlt: "稚內港北防波堤穹頂綿延的古羅馬式拱柱",
     imagePosition: "center 58%",
     stops: [
@@ -205,7 +208,7 @@ const days: DayChapter[] = [
     route: "稚內 → 留萌 → 小樽",
     mood: "海岸公路漫長得像一場電影，終點是小樽煤油燈下的復古夜色。",
     drive: "全日海岸公路",
-    image: "/images/ororon-windfarm.jpg",
+    image: publicAsset("/images/ororon-windfarm.jpg"),
     imageAlt: "奧羅龍線道道 106 號旁一字排開的巨大風車",
     imagePosition: "center 47%",
     stops: [
@@ -230,7 +233,7 @@ const days: DayChapter[] = [
     route: "小樽 → 札幌",
     mood: "從港町的玻璃微光轉場到札幌霓虹，旅程正式進入城市篇章。",
     drive: "主線車程約 40 分鐘",
-    image: "/images/otaru-canal.jpg",
+    image: publicAsset("/images/otaru-canal.jpg"),
     imageAlt: "暖色街燈倒映在夜晚的小樽運河",
     imagePosition: "center 52%",
     stops: [
@@ -255,7 +258,7 @@ const days: DayChapter[] = [
     route: "札幌 → 瀧野靈園 → 三井 Outlet → 札幌",
     mood: "上午沉入建築的寂靜，下午切換成滿載而歸的購物快感。",
     drive: "前往瀧野約 30 分鐘",
-    image: "/images/hill-of-buddha.jpg",
+    image: publicAsset("/images/hill-of-buddha.jpg"),
     imageAlt: "瀧野靈園薰衣草丘中的安藤忠雄頭大佛",
     imagePosition: "center 46%",
     stops: [
@@ -280,7 +283,7 @@ const days: DayChapter[] = [
     route: "白色戀人公園 → 啤酒博物館 → 狸小路 → 藻岩山",
     mood: "白日收藏城市經典，夜晚則把整座札幌的燈火收進眼底。",
     drive: "市區自駕後改搭大眾運輸",
-    image: "/images/moiwa-night.jpg",
+    image: publicAsset("/images/moiwa-night.jpg"),
     imageAlt: "從藻岩山俯瞰札幌延伸至天際的萬家燈火",
     imagePosition: "center 54%",
     stops: [
@@ -305,7 +308,7 @@ const days: DayChapter[] = [
     route: "札幌 → 新千歲機場 → 台灣",
     mood: "行李裝滿戰利品，心裡則留著一路向北、再沿海而返的遼闊風景。",
     drive: "前往機場約 1 小時",
-    image: "/images/shikisai-hill.jpg",
+    image: publicAsset("/images/shikisai-hill.jpg"),
     imageAlt: "四季彩之丘層層延伸的繽紛花田，作為北海道旅程回望",
     imagePosition: "center 52%",
     stops: [
@@ -362,8 +365,8 @@ function chapterImages(chapter: Chapter) {
   if (chapter.kind === "day") {
     return [chapter.image, chapter.secondaryImage].filter((image): image is string => Boolean(image));
   }
-  if (chapter.kind === "cover") return ["/images/white-shell-road.jpg"];
-  return ["/images/ororon-windfarm.jpg"];
+  if (chapter.kind === "cover") return [publicAsset("/images/white-shell-road.jpg")];
+  return [publicAsset("/images/ororon-windfarm.jpg")];
 }
 
 export function TravelBook() {
@@ -672,7 +675,7 @@ function CoverChapter({ interactive, onStart }: { interactive: boolean; onStart:
     <article className="chapter cover-chapter">
       <img
         className="cover-chapter-image"
-        src="/images/white-shell-road.jpg"
+        src={publicAsset("/images/white-shell-road.jpg")}
         alt="宗谷丘陵蜿蜒向海的白色扇貝殼道路"
         draggable="false"
         loading="eager"
@@ -704,7 +707,7 @@ function RouteChapter() {
   return (
     <article className="chapter route-chapter">
       <div className="route-visual">
-        <img src="/images/ororon-windfarm.jpg" alt="奧羅龍線沿海原野與巨大風車陣" draggable="false" />
+        <img src={publicAsset("/images/ororon-windfarm.jpg")} alt="奧羅龍線沿海原野與巨大風車陣" draggable="false" />
         <div className="route-photo-copy">
           <NavigationArrow size={30} weight="duotone" />
           <p>主線順向縱走</p>
