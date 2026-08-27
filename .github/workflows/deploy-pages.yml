@@ -35,7 +35,7 @@ jobs:
         run: |
           npm run lint
           npx tsc --noEmit
-          node --test tests/static-export-route.test.mjs
+          node --test tests/static-export-route.test.mjs tests/github-pages-config.test.mjs
 
       - name: Configure GitHub Pages
         id: pages

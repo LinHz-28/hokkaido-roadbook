@@ -13,7 +13,6 @@ const nextConfig: NextConfig = {
   ...(isGitHubPagesBuild
     ? {
         output: "export",
-        basePath: githubPagesBasePath,
         assetPrefix: githubPagesAssetPrefix,
         trailingSlash: true,
       }
